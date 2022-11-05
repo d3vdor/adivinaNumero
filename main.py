@@ -47,7 +47,8 @@ def menu():
 
 # Funciones Logicas
 def easy_level():
-    print("Adivina el numero del 1 al 100\n")
+    os.system("cls")
+    print("\n   Easy Level\nAdivina el numero del 1 al 100\n")
     random_number = random.randint(1,100)
     user_number = int(input("Digite un numero: "))
     vidas = 0
@@ -61,7 +62,8 @@ def easy_level():
 
 
 def medium_level():
-    print("Adivina el numero del 1 al 100\n")
+    os.system("cls")
+    print("\n   Medium Level\nAdivina el numero del 1 al 100\n")
     random_number = random.randint(1,100)
     print("Total de vidas 10")
     user_number = int(input("Digite un numero: "))
@@ -83,7 +85,8 @@ def medium_level():
 
 
 def hard_level():
-    print("Adivina numero del 1 al 100")
+    os.system("cls")
+    print("\n   Hard Level\nAdivina numero del 1 al 100")
     print("Total de vidas: 5")
     random_number = random.randint(1,100)
     user_number = int(input("Digita un numero: "))
