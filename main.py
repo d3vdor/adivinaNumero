@@ -12,7 +12,15 @@ def logica_juego(a,b):
 
 
 def back_menu():
-    pass
+    numero = 3
+    print("Regresando al menu en")
+    for i in range(numero):
+        print(numero)
+        time.sleep(1)
+        numero -= 1
+        if numero == 0:
+            os.system("cls")
+            menu()
 
 
 def menu():
