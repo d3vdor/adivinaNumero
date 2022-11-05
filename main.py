@@ -12,7 +12,7 @@ def logica_juego(a,b):
 
 
 def back_menu():
-    numero = 3
+    numero = 5
     print("Regresando al menu en")
     for i in range(numero):
         print(numero)
@@ -55,8 +55,8 @@ def easy_level():
         logica_juego(user_number,random_number)
         user_number = int(input("Digita otro numero: "))
         vidas += 1
-    print("Adivinaste el numero!!")
-    print(f"Numero de intentos: {vidas}")
+    print("\nGanaste!!")
+    print(f"Numero de intentos: {vidas}\n")
     back_menu()
 
 
@@ -73,12 +73,12 @@ def medium_level():
         user_number = int(input("Digita otro numero: "))
         vidas -= 1
         if vidas == 0:
-            print("Perdiste!!")
-            print(f"El numero era {random_number}")
+            print("\nPerdiste!!")
+            print(f"El numero era {random_number}\n")
             back_menu()
             
-    print("Adivinaste el numero!!")
-    print(f"Numero de intentos: {vidas}")
+    print("\nGanaste!!")
+    print(f"Numero de intentos: {vidas}\n")
     back_menu()
 
 
@@ -94,11 +94,11 @@ def hard_level():
         print(f"Vidas restantes: {vidas}")
         vidas -= 1
         if vidas == 0:
-            print("Perdiste!!")
-            print(f"El numero era {random_number}")
+            print("\nPerdiste!!")
+            print(f"El numero era {random_number}\n")
             back_menu()
-        print("Ganaste!!")
-        print(f"Total de vidas: {vidas}")
+        print("\nGanaste!!")
+        print(f"Total de vidas: {vidas}\n")
         back_menu()
 
 # Funcion Main
