@@ -37,9 +37,9 @@ def menu():
         if opc == 1:
             easy_level()
         elif opc == 2:
-            medium_level
+            medium_level()
         elif opc == 3:
-            hard_level
+            hard_level()
         elif opc == 4:
             break
         else:
@@ -57,11 +57,29 @@ def easy_level():
         vidas += 1
     print("Adivinaste el numero!!")
     print(f"Numero de intentos: {vidas}")
-    menu()
+    back_menu()
 
 
 def medium_level():
-    pass
+    print("Adivina el numero del 1 al 100\n")
+    random_number = random.randint(1,100)
+    print("Total de vidas 10")
+    user_number = int(input("Digite un numero: "))
+    vidas = 9
+
+    while user_number != random_number:
+        print(f"Total de vidas {vidas}")
+        logica_juego(user_number,random_number)
+        user_number = int(input("Digita otro numero: "))
+        vidas -= 1
+        if vidas == 0:
+            print("Perdiste!!")
+            print(f"El numero era {random_number}")
+            back_menu()
+            
+    print("Adivinaste el numero!!")
+    print(f"Numero de intentos: {vidas}")
+    back_menu()
 
 
 def hard_level():
