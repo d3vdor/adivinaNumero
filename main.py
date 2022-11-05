@@ -83,7 +83,23 @@ def medium_level():
 
 
 def hard_level():
-    pass
+    print("Adivina numero del 1 al 100")
+    print("Total de vidas: 5")
+    random_number = random.randint(1,100)
+    user_number = int(input("Digita un numero: "))
+    vidas = 4
+    while user_number != random_number:
+        logica_juego(user_number,random_number)
+        user_number = int(input("Digita un numero: "))
+        print(f"Vidas restantes: {vidas}")
+        vidas -= 1
+        if vidas == 0:
+            print("Perdiste!!")
+            print(f"El numero era {random_number}")
+            back_menu()
+        print("Ganaste!!")
+        print(f"Total de vidas: {vidas}")
+        back_menu()
 
 # Funcion Main
 def main():
