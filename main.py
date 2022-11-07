@@ -19,11 +19,12 @@ def header(mensaje):
 def logica(n_random,n_user,n_lifes):
     while n_user != n_random:
         logica_juego(n_user,n_random)
-        n_user = int(input("Digite otro numero: "))
+        n_user = int(input("\nDigite otro numero: "))
         print(f"Vidas restantes: {n_lifes - 1}")
         n_lifes -= 1
         if n_lifes == 0:
             print(f"Perdiste!!\nEl numero era: {n_random}")
+            back_menu()
     back_menu()
     return n_random,n_user
 
@@ -71,18 +72,11 @@ def menu():
 
 # Funciones Logicas
 def easy_level():
-    os.system("cls")
-    print("\n   Easy Level\nAdivina el numero del 1 al 100\n")
+    header("Easy Level")
     random_number = random.randint(1,100)
+    print("vidas totales: 20")
     user_number = int(input("Digite un numero: "))
-    vidas = 0
-    while user_number != random_number:
-        logica_juego(user_number,random_number)
-        user_number = int(input("Digita otro numero: "))
-        vidas += 1
-    print("\nGanaste!!")
-    print(f"Numero de intentos: {vidas}\n")
-    back_menu()
+    logica(random_number,user_number,20)
 
 
 def medium_level():
@@ -94,24 +88,11 @@ def medium_level():
 
 
 def hard_level():
-    os.system("cls")
-    print("\n   Hard Level\nAdivina numero del 1 al 100")
-    print("Total de vidas: 5")
+    header("Medium Level")
     random_number = random.randint(1,100)
-    user_number = int(input("Digita un numero: "))
-    vidas = 4
-    while user_number != random_number:
-        logica_juego(user_number,random_number)
-        user_number = int(input("Digita un numero: "))
-        print(f"Vidas restantes: {vidas}")
-        vidas -= 1
-        if vidas == 0:
-            print("\nPerdiste!!")
-            print(f"El numero era {random_number}\n")
-            back_menu()
-        print("\nGanaste!!")
-        print(f"Total de vidas: {vidas}\n")
-        back_menu()
+    print("vidas totales: 5")
+    user_number = int(input("Digite un numero: "))
+    logica(random_number,user_number,5)
 
 # Funcion Main
 def main():
