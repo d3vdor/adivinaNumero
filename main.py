@@ -1,3 +1,11 @@
+'''
+    Adivina el numero.
+    1. Easy Level
+    2. Medium Level
+    3. Hard Level
+'''
+
+
 # Librerias
 import os
 import random
