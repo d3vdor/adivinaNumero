@@ -1,22 +1,22 @@
-'''
-    Adivina el numero.
-    1. Easy Level
-    2. Medium Level
-    3. Hard Level
-'''
-
-
 # Librerias
 import os
 import random
 import time
 
 # Funciones Globales
-def header(mensaje):
+def header(mensaje,n_lifes):
     print(f"\n  {mensaje}\nAdivina el numero del 1 al 100\n")
+    print(f"Vidas Totales: {n_lifes}")
 
 
-def logica(n_random,n_user,n_lifes):
+def entrada():
+    random_number = random.randint(1,100)
+    print("vidas totales: 20")
+    user_number = int(input("Digite un numero: "))
+    salida(random_number,user_number,10)
+
+
+def salida(n_random,n_user,n_lifes):
     while n_user != n_random:
         logica_juego(n_user,n_random)
         n_user = int(input("\nDigite otro numero: "))
@@ -72,27 +72,18 @@ def menu():
 
 # Funciones Logicas
 def easy_level():
-    header("Easy Level")
-    random_number = random.randint(1,100)
-    print("vidas totales: 20")
-    user_number = int(input("Digite un numero: "))
-    logica(random_number,user_number,20)
+    header("Easy Level",20)
+    entrada()
 
 
 def medium_level():
-    header("Medium Level")
-    random_number = random.randint(1,100)
-    print("vidas totales: 10")
-    user_number = int(input("Digite un numero: "))
-    logica(random_number,user_number,10)
+    header("Medium Level",10)
+    entrada()
 
 
 def hard_level():
-    header("Medium Level")
-    random_number = random.randint(1,100)
-    print("vidas totales: 5")
-    user_number = int(input("Digite un numero: "))
-    logica(random_number,user_number,5)
+    header("Hard Level",5)
+    entrada()
 
 # Funcion Main
 def main():
