@@ -15,27 +15,25 @@ def entrada(vidas): # Entrada de Numeros
     salida(random_number,user_number,vidas)
 
 
-def logica_juego(a,b): # Comparacion de numeros
-    if a < b:
-        print("Digita un numero mas grande")
-    else:
-        print("Digita un numero mas chico")
-
-
 def salida(n_random,n_user,n_lifes): # Bucle de comparacion
     while n_user != n_random:
-        logica_juego(n_user,n_random)
+        if n_user < n_random:
+            print("Digita un numero mas grande")
+        else:
+            print("Digita un numero mas chico")
         n_user = int(input("\nDigite otro numero: "))
         print(f"Vidas restantes: {n_lifes - 1}")
         n_lifes -= 1
         if n_lifes == 0:
             print(f"Perdiste!!\nEl numero era: {n_random}")
             back_menu()
+    print(f"\nGanaste!!\nVidas restantes: {n_lifes}\n")
     back_menu()
     return n_random,n_user
 
 
 def back_menu(): # Cuenta regresiva
+    time.sleep(1)
     numero = 5
     print("Regresando al menu en")
     for i in range(numero):
