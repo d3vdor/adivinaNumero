@@ -12,6 +12,22 @@ import random
 import time
 
 # Funciones Globales
+def header(mensaje):
+    print(f"\n  {mensaje}\nAdivina el numero del 1 al 100\n")
+
+
+def logica(n_random,n_user,n_lifes):
+    while n_user != n_random:
+        logica_juego(n_user,n_random)
+        n_user = int(input("Digite otro numero: "))
+        print(f"Vidas restantes: {n_lifes - 1}")
+        n_lifes -= 1
+        if n_lifes == 0:
+            print(f"Perdiste!!\nEl numero era: {n_random}")
+    back_menu()
+    return n_random,n_user
+
+
 def logica_juego(a,b):
     if a < b:
         print("Digita un numero mas grande")
@@ -70,26 +86,11 @@ def easy_level():
 
 
 def medium_level():
-    os.system("cls")
-    print("\n   Medium Level\nAdivina el numero del 1 al 100\n")
+    header("Medium Level")
     random_number = random.randint(1,100)
-    print("Total de vidas 10")
+    print("vidas totales: 10")
     user_number = int(input("Digite un numero: "))
-    vidas = 9
-
-    while user_number != random_number:
-        print(f"Total de vidas {vidas}")
-        logica_juego(user_number,random_number)
-        user_number = int(input("Digita otro numero: "))
-        vidas -= 1
-        if vidas == 0:
-            print("\nPerdiste!!")
-            print(f"El numero era {random_number}\n")
-            back_menu()
-            
-    print("\nGanaste!!")
-    print(f"Numero de intentos: {vidas}\n")
-    back_menu()
+    logica(random_number,user_number,10)
 
 
 def hard_level():
