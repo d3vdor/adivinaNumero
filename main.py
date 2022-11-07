@@ -106,6 +106,7 @@ def hard_level():
 
 # Funcion Main
 def main():
+    print("\nBienvenio\n")
     menu()
     print("\nPrograma Finalizado")
 
