@@ -37,7 +37,7 @@ def salida(n_random,n_user,n_lifes): # Bucle de comparacion
 
 def back_menu(): # Cuenta regresiva
     numero = 5
-    print("Regresando al menu en")
+    print("\nVolviendo al menu en:")
     for i in range(numero):
         print(numero)
         time.sleep(1)
